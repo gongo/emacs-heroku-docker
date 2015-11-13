@@ -1,0 +1,1 @@
+web: cask exec emacs -Q --batch -l app.el
