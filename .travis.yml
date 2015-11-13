@@ -1,0 +1,19 @@
+sudo: required
+
+language: ruby
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+before_script:
+  - docker build -t gongo/heroku-emacs .
+  - cd example
+  - docker-compose build web
+  - docker-compose up -d web
+
+script:
+  - TARGET_CONTAINER_ID=example_web_1 bundle exec rake spec
