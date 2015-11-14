@@ -1,6 +1,8 @@
 Heroku Emacs Docker Image
 ==============================
 
+[![Build Status](https://travis-ci.org/gongo/emacs-heroku-docker.svg?branch=master)](https://travis-ci.org/gongo/emacs-heroku-docker)
+
 This image is for use with Heroku Docker CLI.
 
 REQUIREMENTS
