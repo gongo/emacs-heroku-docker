@@ -1,4 +1,5 @@
 FROM heroku/cedar:14
+MAINTAINER Wataru MIYAGUNI <gonngo@gmail.com>
 
 RUN echo "deb-src http://archive.ubuntu.com/ubuntu trusty main" >> /etc/apt/sources.list
 
