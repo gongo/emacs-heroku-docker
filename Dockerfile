@@ -1,4 +1,5 @@
 FROM heroku/cedar:14
+MAINTAINER Wataru MIYAGUNI <gonngo@gmail.com>
 
 RUN echo "deb-src http://archive.ubuntu.com/ubuntu trusty main" >> /etc/apt/sources.list
 
@@ -36,9 +37,11 @@ RUN curl -s --retry 3 -L http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-$EMACS_VERSI
       --without-gconf \
       --without-gsettings \
       --without-selinux \
+      --without-sound \
       --without-gnutls \
       --without-zlib \
       --without-makeinfo \
+      --without-x \
  && make -s -j 4 \
  && make -s install \
  && rm -rf /emacs-$EMACS_VERSION
