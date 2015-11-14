@@ -36,9 +36,11 @@ RUN curl -s --retry 3 -L http://ftp.jaist.ac.jp/pub/GNU/emacs/emacs-$EMACS_VERSI
       --without-gconf \
       --without-gsettings \
       --without-selinux \
+      --without-sound \
       --without-gnutls \
       --without-zlib \
       --without-makeinfo \
+      --without-x \
  && make -s -j 4 \
  && make -s install \
  && rm -rf /emacs-$EMACS_VERSION
