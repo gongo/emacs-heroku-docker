@@ -1,0 +1,21 @@
+sudo: required
+
+language: ruby
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+env:
+  - TARGET_CONTAINER_ID=example-heroku-emacs
+
+before_script:
+  - docker build -t gongo/heroku-emacs .
+  - docker build -t example-image example/
+  - docker run -d --name $TARGET_CONTAINER_ID example-image cask exec emacs -Q --batch -l app.el
+
+script:
+  - bundle exec rake spec
